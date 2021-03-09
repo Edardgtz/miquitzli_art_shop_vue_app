@@ -1,14 +1,38 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Home from '../views/Home.vue';
+import ProductsIndex from "../views/ProductsIndex.vue";
+import Login from "../views/Login.vue";
+import Logout from "../views/Logout.vue";
+import Signup from "../views/Signup.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/products/index',
+    name: 'products-index',
+    component: ProductsIndex
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
+  },
+  {
+    path: '/logout',
+    name: 'logout',
+    component: Logout
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: Signup
   },
   {
     path: '/about',
