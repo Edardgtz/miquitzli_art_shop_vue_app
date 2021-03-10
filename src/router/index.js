@@ -1,10 +1,11 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
-import ProductsIndex from "../views/ProductsIndex.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import Signup from "../views/Signup.vue";
+import ProductsIndex from "../views/ProductsIndex.vue";
+import ProductsShow from "../views/ProductsShow.vue";
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/signup',
     name: 'signup',
     component: Signup
+  },
+  {
+    path: '/products/:id',
+    name: 'products-show',
+    component: ProductsShow
   },
   {
     path: '/about',

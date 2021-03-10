@@ -12,7 +12,9 @@
       <b-card no-body class="overflow-hidden" style="max-width: 540px; margin-bottom: 1.5em;">
         <b-row no-gutters>
           <b-col md="6">
+            <router-link v-bind:to="'/products/' + product.id">
             <b-card-img v-bind:src="product.images" alt="product image" class="rounded-0"></b-card-img>
+            </router-link>
           </b-col>
           <b-col md="6">
             <b-card-body title="Horizontal Card">
