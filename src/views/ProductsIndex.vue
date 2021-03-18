@@ -1,20 +1,13 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
-    <!-- <div v-for="product in products">
-      <br><p><strong>{{ product.name }}</strong></p>
-      <img v-bind:src="product.images" alt="product image">
-      <br><p>Materials: {{product.materials}}</p>
-      <p>Price: {{product.price}}</p>
-      <!-- <p>Sale Status: {{product.sale_status}}</p> -->
-    <!-- </div> -->
+  
     <div v-for="product in products" class="card_spacing">
+      
       <b-card no-body class="overflow-hidden" style="max-width: 540px; margin-bottom: 1.5em;">
         <b-row no-gutters>
           <b-col md="6">
-            <router-link v-bind:to="'/products/' + product.id">
             <b-card-img v-bind:src="product.images" alt="product image" class="rounded-0"></b-card-img>
-            </router-link>
           </b-col>
           <b-col md="6">
             <b-card-body title="Horizontal Card">
@@ -22,13 +15,17 @@
                 <p><strong>{{ product.name }}</strong></p>
                 <br><p>Materials: {{product.materials}}</p>
                 <p>Price: {{product.price}}</p>
-                <b-button variant="dark">Buy Now</b-button>
+                <router-link v-bind:to="'/products/' + product.id">
+                  <b-button variant="dark">Details</b-button>
+                </router-link>  
               </b-card-text>
             </b-card-body>
           </b-col>
         </b-row>
       </b-card>
+      
     </div>
+
   </div>
 </template>
 

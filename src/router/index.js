@@ -6,6 +6,7 @@ import Logout from "../views/Logout.vue";
 import Signup from "../views/Signup.vue";
 import ProductsIndex from "../views/ProductsIndex.vue";
 import ProductsShow from "../views/ProductsShow.vue";
+import CartedProducts from "../views/CartedProducts.vue";
 
 Vue.use(VueRouter);
 
@@ -39,6 +40,11 @@ const routes = [
     path: '/products/:id',
     name: 'products-show',
     component: ProductsShow
+  },
+  {
+    path: '/carted_products',
+    name: 'carted-products',
+    component: CartedProducts
   },
   {
     path: '/about',

@@ -26,6 +26,7 @@
           <h2>Category: {{ product.category }}</h2>
           <h2>Materials: {{ product.materials }}</h2>
           <h2>Price: {{ product.price }}</h2>
+          <b-button v-on:click="createCartedProduct()" variant="dark">ADD TO CART</b-button>
         </b-card-text>
         <template #footer>
           <small class="text-muted">Last updated 3 mins ago</small>
@@ -57,6 +58,17 @@ export default {
       axios.get("/api/products/" + this.$route.params.id).then((response) => {
         console.log(response.data);
         this.product = response.data;
+      });
+    },
+    createCartedProduct: function () {
+      var params = {
+        product_id: this.product.id,
+      };
+      console.log("Creating Carted Product");
+      console.log(params);
+      axios.post("api/carted_products", params).then((response) => {
+        console.log(response.data);
+        this.$router.push("/carted_products");
       });
     },
   },
