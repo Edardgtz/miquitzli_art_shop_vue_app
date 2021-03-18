@@ -1,8 +1,31 @@
 <template>
   <div class="home">
-    <div v-for="cartedProduct in cartedProducts" >
-      <h1>{{ cartedProduct.product_id }}</h1>
+    
+    <div v-for="cartedProduct in cartedProducts" class="card_spacing">
+
+      <b-card no-body class="overflow-hidden" style="max-width: 540px; margin-bottom: 1.5em;">
+        <b-row no-gutters>
+          <b-col md="6">
+            <b-card-img v-bind:src="cartedProduct.image" alt="product image" class="rounded-0"></b-card-img>
+          </b-col>
+          <b-col md="6">
+            <b-card-body title="Horizontal Card">
+              <b-card-text>
+                <p><strong>{{ cartedProduct.product.name }}</strong></p>
+                <br><p>Materials: {{cartedProduct.product.materials}}</p>
+                <p>Price: {{cartedProduct.product.price}}</p>
+                <p>{{ cartedProduct.product.image }}</p>
+                <b-button v-on:click="removeFromCart()" variant="dark">Remove</b-button>
+              </b-card-text>
+            </b-card-body>
+          </b-col>
+        </b-row>
+      </b-card>
+
+
+      
     </div>
+
   </div>
 </template>
 
@@ -30,6 +53,14 @@ export default {
         console.log(response.data);
         this.cartedProducts = response.data;
       });
+    },
+    removeFromCart: function () {
+      console.log("Remove From Cart...");
+      axios
+        .delete("api/carted_products/" + this.$route.params.id)
+        .then((response) => {
+          console.log(response.data);
+        });
     },
   },
 };
