@@ -15,15 +15,13 @@
                 <br><p>Materials: {{cartedProduct.product.materials}}</p>
                 <p>Price: {{cartedProduct.product.price}}</p>
                 <p>{{ cartedProduct.product.image }}</p>
-                <b-button v-on:click="removeFromCart()" variant="dark">Remove</b-button>
+                <b-button v-on:click="removeFromCart(cartedProduct)" variant="dark">Remove</b-button>
               </b-card-text>
             </b-card-body>
           </b-col>
         </b-row>
       </b-card>
 
-
-      
     </div>
 
   </div>
@@ -40,6 +38,7 @@ export default {
     return {
       message: "Carted Products!",
       cartedProducts: [],
+      currentCartedProduct: {},
     };
   },
   created: function () {
@@ -54,10 +53,12 @@ export default {
         this.cartedProducts = response.data;
       });
     },
-    removeFromCart: function () {
+    removeFromCart: function (theProduct) {
+      console.log(theProduct);
+      this.currentCartedProduct = theProduct;
       console.log("Remove From Cart...");
       axios
-        .delete("api/carted_products/" + this.$route.params.id)
+        .delete("api/carted_products/" + this.currentCartedProduct.id)
         .then((response) => {
           console.log(response.data);
         });
