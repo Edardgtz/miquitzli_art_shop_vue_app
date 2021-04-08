@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     
+    <h1><strong>Carted Products</strong></h1>
     <div v-for="cartedProduct in cartedProducts" class="card_spacing">
 
       <b-card no-body class="overflow-hidden" style="max-width: 540px; margin-bottom: 1.5em;">
@@ -24,6 +25,8 @@
 
     </div>
 
+    <b-button v-on:click="placeOrder()" variant="success">CHECKOUT</b-button>
+    <br>
   </div>
 </template>
 
@@ -39,6 +42,7 @@ export default {
       message: "Carted Products!",
       cartedProducts: [],
       currentCartedProduct: {},
+      currentOrder: {},
     };
   },
   created: function () {
@@ -62,6 +66,14 @@ export default {
         .then((response) => {
           console.log(response.data);
         });
+    },
+    placeOrder: function () {
+      console.log("in placeOrder");
+      axios.post("api/orders").then((response) => {
+        console.log(response.data);
+        this.currentOrder = response.data;
+        this.$router.push("/orders");
+      });
     },
   },
 };
