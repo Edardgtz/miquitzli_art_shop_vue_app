@@ -72,7 +72,7 @@ export default {
       axios.post("api/orders").then((response) => {
         console.log(response.data);
         this.currentOrder = response.data;
-        this.$router.push("/orders");
+        this.$router.push("/orders_show");
       });
     },
   },

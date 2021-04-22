@@ -7,9 +7,12 @@ import Signup from "../views/Signup.vue";
 import ProductsIndex from "../views/ProductsIndex.vue";
 import ProductsShow from "../views/ProductsShow.vue";
 import CartedProducts from "../views/CartedProducts.vue";
-import Orders from "../views/Orders.vue";
+import OrdersIndex from "../views/OrdersIndex.vue";
+import OrdersShow from "../views/OrdersShow";
+import VueInputAutowidth from 'vue-input-autowidth'
 
 Vue.use(VueRouter);
+Vue.use(VueInputAutowidth);
 
 const routes = [
   {
@@ -48,9 +51,14 @@ const routes = [
     component: CartedProducts
   },
   {
-    path: '/orders',
-    name: 'orders',
-    component: Orders
+    path: '/orders_index',
+    name: 'orders-index',
+    component: OrdersIndex
+  },
+  {
+    path: '/orders_show',
+    name: 'orders-show',
+    component: OrdersShow
   },
   {
     path: '/about',

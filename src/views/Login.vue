@@ -7,11 +7,11 @@
       </ul>
       <div class="form-group">
         <label>Email:</label>
-        <input type="email" class="form-control" v-model="email">
+        <input type="email" v-autowidth="{maxWidth: '960px', minWidth: '20px', comfortZone: 0}" class="form-control" v-model="email">
       </div>
       <div class="form-group">
         <label>Password:</label>
-        <input type="password" class="form-control" v-model="password">
+        <input type="password" v-autowidth="{maxWidth: '960px', minWidth: '20px', comfortZone: 0}" class="form-control" v-model="password">
       </div>
       <input type="submit" class="btn btn-primary" value="Submit">
     </form>
@@ -24,7 +24,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      email: "person@person.com",
+      email: "eddie@eddie.com",
       password: "password",
       errors: [],
     };
