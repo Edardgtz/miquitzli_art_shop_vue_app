@@ -21,11 +21,8 @@
                 class="mr-sm-2" 
                 placeholder="Search by Categorie"></b-form-input>
 
-                <b-button 
-                size="md" 
-                class="my-2 my-sm-0" 
-                type="submit">Search</b-button>
-              </b-nav-form>
+                <b-button size="md" class="my-2 my-sm-0" type="submit">Search</b-button>
+                </b-nav-form>
 
               <b-nav-item-dropdown text="Shop" right>
                 <b-dropdown-item href="/products/index">Art</b-dropdown-item>
@@ -47,7 +44,7 @@
       </div>
       
     </div>
-
+    <router-view/>
   </div>
 </template>
 
@@ -94,6 +91,7 @@ div {
 
 body {
   background-image: url("../src/assets/images/455.jpg");
+  background-position: center;
 }
 
 .form-control {
@@ -156,6 +154,7 @@ h1,
 
 img.card-img-top {
   margin-top: 20px;
+  background-position: cover;
 }
 
 div.card {
@@ -170,12 +169,23 @@ div.card {
 .index-header {
   font-size: 6em;
 }
+img,
+svg {
+  max-height: fit-content !important;
+  margin-top: 30px;
 
-img {
-  width: 95%;
-  height: 700px;
-  margin-right: 10px;
   margin-left: 10px;
+}
+
+.login {
+  background-color: aqua;
+  max-width: 80%;
+  margin-top: 20px;
+}
+
+.login-form,
+h1 {
+  font-size: 2em;
 }
 </style>
 

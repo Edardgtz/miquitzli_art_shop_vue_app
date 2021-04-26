@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <form v-on:submit.prevent="submit()">
+    <form v-on:submit.prevent="submit()" class="login-form">
       <h1>Login</h1>
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
