@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="products-index" style="margin-top: 1em;">
-      <h1>{{ message }}</h1>
+      <h1 class="index-header">{{ message }}</h1>
       <div v-for="product in products" class="card_spacing">
         
         <b-card no-body class="overflow-hidden" style="max-width: 540px; margin-bottom: 1.5em;">

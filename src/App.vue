@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
+
       <div>
         <b-navbar toggleable="lg" type="dark" variant="success">
           <b-navbar-brand href="#">Miquitzli Art Shop</b-navbar-brand>
@@ -9,48 +10,52 @@
 
           <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav>
-              <b-nav-item href="/">HOME</b-nav-item>
+              <b-nav-item style="font-size: 20px;" href="/">HOME</b-nav-item>
               
             </b-navbar-nav>
 
-            <!-- Right aligned nav items -->
             <b-navbar-nav class="ml-auto">
-              <!-- <b-nav-form>
-                <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
-                <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
-              </b-nav-form> -->
+              <b-nav-form>
+                <b-form-input 
+                size="md" 
+                class="mr-sm-2" 
+                placeholder="Search by Categorie"></b-form-input>
+
+                <b-button 
+                size="md" 
+                class="my-2 my-sm-0" 
+                type="submit">Search</b-button>
+              </b-nav-form>
 
               <b-nav-item-dropdown text="Shop" right>
                 <b-dropdown-item href="/products/index">Art</b-dropdown-item>
                 <b-dropdown-item href="/carted_products">Cart</b-dropdown-item>
-          
               </b-nav-item-dropdown>
 
               <b-nav-item-dropdown right>
-                <!-- Using 'button-content' slot -->
                 <template #button-content>
                   <em>User</em>
                 </template>
                 <b-dropdown-item href="/signup">Sign Up</b-dropdown-item>
                 <b-dropdown-item href="/login">Login</b-dropdown-item>
                 <b-dropdown-item href="/logout">Log Out</b-dropdown-item>
+                <b-dropdown-item href="/orders_index">Orders</b-dropdown-item>
               </b-nav-item-dropdown>
             </b-navbar-nav>
           </b-collapse>
         </b-navbar>
       </div>
       
-      <router-link to="/orders_index">Orders</router-link>
-    
-
     </div>
-    <router-view/>
+
   </div>
 </template>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap");
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Sedgwick Ave Display", cursive, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -65,10 +70,14 @@
   font-weight: bold;
   color: #2c3e50;
 }
+.navbar-brand {
+  font-size: 2em !important;
+}
 
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
 div {
   margin: auto;
 }
@@ -103,8 +112,70 @@ body {
   max-width: 60%;
 }
 
+.card_spacing {
+  max-width: 80%;
+  color: #000000;
+}
+
 .row {
   background-color: rgb(8, 201, 215);
+}
+
+.home-page,
+h1 {
+  font-family: "Sedgwick Ave Display", cursive;
+  color: white;
+  font-size: 2.5em !important;
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+h1,
+.h1 {
+  font-size: 3rem;
+}
+
+.cart {
+  background-color: orange;
+}
+
+.modal-content {
+  background-color: rgb(8, 201, 215) !important;
+}
+
+.product-show {
+  background-color: rgb(8, 201, 215);
+  max-width: 75%;
+}
+
+.product-details {
+  max-width: 75%;
+  max-height: 50%;
+  margin-bottom: 20px;
+}
+
+img.card-img-top {
+  margin-top: 20px;
+}
+
+div.card {
+  background-color: rgb(8, 201, 215);
+  border: 0;
+}
+
+.btn {
+  margin-bottom: 20px;
+}
+
+.index-header {
+  font-size: 6em;
+}
+
+img {
+  width: 95%;
+  height: 700px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 </style>
 

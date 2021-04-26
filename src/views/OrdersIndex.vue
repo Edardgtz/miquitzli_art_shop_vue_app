@@ -8,7 +8,7 @@
           <h6 class="mb-0">Order Number: {{ order.id }}</h6>
         </template>
           <div v-for="cartedProduct in order.carted_products">
-            <b-button variant="outline-primary" v-on:click="showProduct(cartedProduct.product_id)">Show Product Details</b-button>
+            <b-button variant="outline-primary" v-on:click="showProduct(cartedProduct.product_id)">Show Product Details For {{ cartedProduct.product_id }}</b-button>
           </div>
         <b-card-text>
           <h3>SUBTOTAL:{{ order.subtotal }}</h3>

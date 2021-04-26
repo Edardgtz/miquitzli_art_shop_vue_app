@@ -18,21 +18,19 @@
       </b-row>
     </b-card>
   </div> -->
-  <div>
-    <b-card-group>
-      <b-card v-bind:img-src="product.images" alt="Product Image" img-top>
+  <div class="product-show">
+    <div class="product-details">
+      <b-card v-bind:img-src="product.images" alt="Product Image" img-top >
         <b-card-text>
           <h1>{{ product.name }}</h1>
           <h2>Category: {{ product.category }}</h2>
           <h2>Materials: {{ product.materials }}</h2>
           <h2>Price: {{ product.price }}</h2>
-          <b-button v-on:click="createCartedProduct()" variant="dark">ADD TO CART</b-button>
         </b-card-text>
-        <template #footer>
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </template>
+        
       </b-card>
-    </b-card-group>
+    </div>
+    <b-button v-on:click="createCartedProduct()" variant="dark">ADD TO CART</b-button>
   </div>
 </template>
 
